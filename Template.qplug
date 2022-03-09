@@ -1,0 +1,147 @@
+PluginInfo = {
+    Name = "",
+    Version = "",
+    Id = "",
+    Description = [[]],
+    Author = "",
+    ShowDebug = true
+}
+
+------------------------------- Global Variables ------------------------------
+COLORS = { 
+	["OK"] = "#00FF00",
+	[0] = "#00FF00",
+	["COMPROMISED"] = "orange",
+	[1] = "orange",
+	["FAULT"] = "red",
+	[2] = "red",
+	["NOT_PRESENT"] = "gray",
+	[3] = "gray",
+	["MISSING"] = "darkred",
+	[4] = "darkred",
+	["INITIALIZING"] = "blue",
+	[5] = "blue",
+	["GREEN"] = "#00ff00",
+	["RED"] = "#ff0000",
+	["ORANGE"] = "#ffff00",
+	["GRAY"] = "#7c7c7c",
+	["DARK_GREEN"] = "#007C00",
+}
+
+STATUS_VALUES = {
+	["OK"] = 0,
+	["COMPROMISED"] = 1,
+	["FAULT"] = 2,
+	["NOT_PRESENT"] = 3,
+	["MISSING"] = 4,
+	["INITIALIZING"] = 5,
+}
+
+--------------------------------- Properties ----------------------------------
+function GetProperties()
+    props = { }
+
+    return props
+end
+
+--Modify visibility based on other properties
+--[[
+    Example: 
+    if props["propertyName"].Value == "DHCP" then
+        props["someStaticIPRelatedProperty"].IsHidden = true
+    else
+        props["someStaticIPRelatedProperty"].IsHidden = false
+]]--
+function RectifyProperties(props)
+    return props
+end
+
+------------------------------ Plugin Block Name ------------------------------
+function GetPrettyName(props)
+    return ""
+end
+
+---------------------------------- Controls -----------------------------------
+function GetControls(props)
+    ctls = { }
+
+    return ctls
+end
+
+------------------------------- Control Layout --------------------------------
+function GetControlLayout(props)
+    layout = { }
+
+    graphics = { }
+
+    return layout, graphics
+end
+
+---------------------------- Other Plugin Functions ---------------------------
+
+function GetPins(props)
+	local pins = { }
+  
+	return pins
+end
+--[[ Uncomment if you need multiple pages (tabs)
+function GetPages(props)
+    local pages = {}
+
+    return pages
+end
+]]
+function GetComponents(props)
+	return
+	{
+    
+	}
+end
+
+function GetWiring(props)
+	local wiring = { }
+  
+	return wiring
+end
+
+------------------------------ Local Functions --------------------------------
+function HEXtoDEC(hex)
+	hex = string.upper(hex)
+	local b1 = string.byte(string.sub(hex, 1, 1))
+	local b2 = string.byte(string.sub(hex, 2, 2))
+  
+	return( (b1<=57 and b1-48 or b1-55)*16 + (b2<=57 and b2-48 or b2-55) )
+end
+
+function ConvertColor(c)
+	local t = {}
+	t[1] = HEXtoDEC(c:sub(2,3))
+	t[2] = HEXtoDEC(c:sub(4,5))
+	t[3] = HEXtoDEC(c:sub(6,7))
+	return t
+end
+
+------------------------------- Runtime Logic ---------------------------------
+
+if Controls then
+------------------------------------ Objects ----------------------------------
+
+
+-------------------------------- Initialization -------------------------------
+function Initialize()
+	
+end
+
+canInitialize = true
+
+--Check Properties and other stuff for illegal values
+
+if canInitialize then
+	print("Initializing")
+	Initialize()
+	print("Initialization Complete")
+else
+	print("Not initializing")
+end
+
+end	--if Controls 
