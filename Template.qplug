@@ -115,9 +115,9 @@ end
 
 function ConvertColor(c)
 	local t = {}
-	t[1] = HEXtoDEC(c:sub(2,3))
-	t[2] = HEXtoDEC(c:sub(4,5))
-	t[3] = HEXtoDEC(c:sub(6,7))
+	t[1] = HEXtoDEC(string.sub(c,2,3))
+	t[2] = HEXtoDEC(string.sub(c,4,5))
+	t[3] = HEXtoDEC(string.sub(c,6,7))
 	return t
 end
 
