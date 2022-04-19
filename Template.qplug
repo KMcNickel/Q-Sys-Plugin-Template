@@ -23,7 +23,7 @@ COLORS = {
 	[5] = "blue",
 	["GREEN"] = "#00ff00",
 	["RED"] = "#ff0000",
-	["ORANGE"] = "#ffff00",
+	["ORANGE"] = "#ffa500",
 	["GRAY"] = "#7c7c7c",
 	["DARK_GREEN"] = "#007C00",
 }
