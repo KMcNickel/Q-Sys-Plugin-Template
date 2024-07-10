@@ -1,7 +1,11 @@
 PluginInfo = {
+	-- Use a tilde (~) to seperate the name into a folder
     Name = "",
+	-- Use semantic versioning
     Version = "",
+	-- Use a GUID for the Id (Note: Avoid changing the Id for a plugin as the Id is used as the unique identifier)
     Id = "",
+	-- The square brackets allow for a multi-line string
     Description = [[]],
     Author = "",
     ShowDebug = true
@@ -92,10 +96,9 @@ function GetPages(props)
 end
 ]]
 function GetComponents(props)
-	return
-	{
-    
-	}
+	local components
+
+	return components
 end
 
 function GetWiring(props)
@@ -129,12 +132,12 @@ if Controls then
 
 -------------------------------- Initialization -------------------------------
 function Initialize()
-	
+	-- Do initialization stuff here
 end
 
 canInitialize = true
 
---Check Properties and other stuff for illegal values
+-- Check Properties and other stuff for illegal values
 
 if canInitialize then
 	print("Initializing")
@@ -143,5 +146,7 @@ if canInitialize then
 else
 	print("Not initializing")
 end
+
+-- Nothing should be done after this point
 
 end	--if Controls 
