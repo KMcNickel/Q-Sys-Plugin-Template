@@ -43,7 +43,7 @@ STATUS_VALUES = {
 
 --------------------------------- Properties ----------------------------------
 function GetProperties()
-    props = { }
+    local props = { }
 
     return props
 end
@@ -67,16 +67,16 @@ end
 
 ---------------------------------- Controls -----------------------------------
 function GetControls(props)
-    ctls = { }
+    local ctls = { }
 
     return ctls
 end
 
 ------------------------------- Control Layout --------------------------------
 function GetControlLayout(props)
-    layout = { }
+    local layout = { }
 
-    graphics = { }
+    local graphics = { }
 
     return layout, graphics
 end
@@ -89,6 +89,7 @@ function GetPins(props)
 	return pins
 end
 --[[ Uncomment if you need multiple pages (tabs)
+--Current page number can be retrieved in other functions as props["page_index"].Value
 function GetPages(props)
     local pages = {}
 
@@ -96,7 +97,7 @@ function GetPages(props)
 end
 ]]
 function GetComponents(props)
-	local components
+	local components = { }
 
 	return components
 end
