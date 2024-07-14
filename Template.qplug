@@ -3,7 +3,7 @@ PluginInfo = {
     Name = "",
 	-- Use semantic versioning
     Version = "",
-	-- Use a GUID for the Id (Note: Avoid changing the Id for a plugin as the Id is used as the unique identifier)
+	-- Use a GUID for the Id (Note: Avoid changing the Id for a plugin once it is set)
     Id = "",
 	-- The square brackets allow for a multi-line string
     Description = [[]],
