@@ -41,6 +41,8 @@ STATUS_VALUES = {
 	["INITIALIZING"] = 5,
 }
 
+ENABLE_CODE_PIN = true
+
 --------------------------------- Properties ----------------------------------
 function GetProperties()
     local props = { }
@@ -69,12 +71,33 @@ end
 function GetControls(props)
     local ctls = { }
 
+	if ENABLE_CODE_PIN then
+		table.insert(ctls, {
+            Name = "code",
+            ControlType = "Text",
+            Count = 1,
+            PinStyle = "Input",
+            UserPin = true
+        })
+	end
+
     return ctls
 end
 
 ------------------------------- Control Layout --------------------------------
 function GetControlLayout(props)
+	-- Uncomment the next line if you are using multiple pages
+	--local currentPage = props["page_index"].Value
+
     local layout = { }
+
+	if ENABLE_CODE_PIN then
+		layout["code"] = 
+		{
+			PrettyName = "Code",
+			Style = "None"
+		}
+	end
 
     local graphics = { }
 
