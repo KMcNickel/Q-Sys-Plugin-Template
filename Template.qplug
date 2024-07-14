@@ -64,6 +64,7 @@ end
 
 ------------------------------ Plugin Block Name ------------------------------
 function GetPrettyName(props)
+	-- Remember that PluginInfo is a global table and its' contents can be accessed (including name and version number)
     return ""
 end
 
