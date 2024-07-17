@@ -62,10 +62,14 @@ function RectifyProperties(props)
     return props
 end
 
------------------------------- Plugin Block Name ------------------------------
+------------------------- Plugin Block Name and Color -------------------------
 function GetPrettyName(props)
 	-- Remember that PluginInfo is a global table and its' contents can be accessed (including name and version number)
     return ""
+end
+
+function GetColor(props)
+	return ConvertColor("#cccccc")
 end
 
 ---------------------------------- Controls -----------------------------------
