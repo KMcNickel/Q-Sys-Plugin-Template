@@ -163,7 +163,7 @@ function Initialize()
 	-- Do initialization stuff here
 end
 
-canInitialize = true
+local canInitialize = true
 
 -- Check Properties and other stuff for illegal values
 
